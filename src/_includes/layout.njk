@@ -13,30 +13,41 @@
 
     .top-bar {
       background-color: #3fc3f3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 0.75em 1em;
     }
 
-    .nav-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.75em;
-      justify-content: center;
-    }
-
-    .phone-section {
-      display: flex;
-      align-items: center;
+    .phone {
       font-size: 1.25rem;
       font-weight: bold;
       color: white;
-      margin-right: 0.75em;
+      display: flex;
+      align-items: center;
     }
 
-    .phone-section span {
+    .phone span {
+      color: #bdfcd4;
       font-size: 1.5rem;
       margin-right: 0.5em;
-      color: #bdfcd4;
+    }
+
+    .hamburger {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
+      display: none;
+    }
+
+    .nav-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75em;
+      padding: 1em;
     }
 
     .nav-btn {
@@ -63,38 +74,83 @@
       color: #bdfcd4;
       box-shadow: inset 0 1px 2px rgba(0,0,0,0.2), 0 2px 5px rgba(0,0,0,0.2);
     }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background-color: #3fc3f3;
+      padding: 1em;
+    }
+
+    .mobile-menu a {
+      color: white;
+      font-size: 1.2rem;
+      margin: 0.5em 0;
+      text-decoration: none;
+    }
+
+    .mobile-open .mobile-menu {
+      display: flex;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
   </style>
+
+  <script>
+    function toggleMenu() {
+      document.body.classList.toggle('mobile-open');
+    }
+  </script>
 </head>
 <body>
 
-  <!-- TOP BAR: PHONE + NAV -->
+  <!-- TOP BAR -->
   <div class="top-bar">
-    <div class="nav-wrapper">
-      <!-- Phone -->
-      <div class="phone-section">
-        <span>📞</span>
-        <a href="tel:6155551234" style="color: white; text-decoration: none;">615-555-1234</a>
-      </div>
-
-      <!-- Nav Buttons -->
-      <a href="/" class="nav-btn active">Home</a>
-      <a href="/careers/" class="nav-btn">Careers</a>
-      <a href="/about/" class="nav-btn">About Us</a>
-      <a href="/commercial/" class="nav-btn">Commercial</a>
-      <a href="/residential/" class="nav-btn">Residential</a>
-      <a href="/quote/" class="nav-btn">Get a Quote</a>
-      <a href="/gallery/" class="nav-btn">Photo Gallery</a>
-      <a href="/more/" class="nav-btn">More</a>
+    <div class="phone">
+      <span>📞</span>
+      <a href="tel:6155551234" style="color: white; text-decoration: none;">615-555-1234</a>
     </div>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
   </div>
 
-  <!-- Bottom Purple Stripe -->
+  <!-- DESKTOP NAV -->
+  <div class="nav-container">
+    <a href="/" class="nav-btn active">Home</a>
+    <a href="/careers/" class="nav-btn">Careers</a>
+    <a href="/about/" class="nav-btn">About Us</a>
+    <a href="/commercial/" class="nav-btn">Commercial</a>
+    <a href="/residential/" class="nav-btn">Residential</a>
+    <a href="/quote/" class="nav-btn">Get a Quote</a>
+    <a href="/gallery/" class="nav-btn">Photo Gallery</a>
+    <a href="/more/" class="nav-btn">More</a>
+  </div>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-menu">
+    <a href="/">Home</a>
+    <a href="/careers/">Careers</a>
+    <a href="/about/">About Us</a>
+    <a href="/commercial/">Commercial</a>
+    <a href="/residential/">Residential</a>
+    <a href="/quote/">Get a Quote</a>
+    <a href="/gallery/">Photo Gallery</a>
+    <a href="/more/">More</a>
+  </div>
+
+  <!-- PURPLE STRIPE -->
   <div style="height: 6px; background-color: #2b0e48;"></div>
 
   <main>
-
-
-
+    {{ content | safe }}
   </main>
 
 </body>
