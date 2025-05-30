@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
-
   <style>
     body {
       margin: 0;
@@ -13,10 +12,13 @@
 
     .top-bar {
       background-color: #3fc3f3;
+      padding: 0.75em 1em;
+    }
+
+    .top-bar-content {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.75em 1em;
     }
 
     .phone {
@@ -36,18 +38,17 @@
     .hamburger {
       background: none;
       border: none;
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       color: white;
       cursor: pointer;
       display: none;
     }
 
-    .nav-container {
+    .nav-left {
       display: flex;
+      align-items: center;
       flex-wrap: wrap;
-      justify-content: center;
       gap: 0.75em;
-      padding: 1em;
     }
 
     .nav-btn {
@@ -95,7 +96,7 @@
     }
 
     @media (max-width: 768px) {
-      .nav-container {
+      .nav-left {
         display: none;
       }
 
@@ -104,7 +105,6 @@
       }
     }
   </style>
-
   <script>
     function toggleMenu() {
       document.body.classList.toggle('mobile-open');
@@ -112,29 +112,30 @@
   </script>
 </head>
 <body>
-
-  <!-- TOP BAR -->
+  <!-- Top Bar with Phone and Hamburger -->
   <div class="top-bar">
-    <div class="phone">
-      <span>📞</span>
-      <a href="tel:6155551234" style="color: white; text-decoration: none;">615-555-1234</a>
+    <div class="top-bar-content">
+      <div class="phone">
+        <span>📞</span>
+        <a href="tel:6155551234" style="color: white; text-decoration: none;">615-555-1234</a>
+      </div>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
     </div>
-    <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+    <!-- Desktop Nav Buttons -->
+    <div class="nav-left">
+      <a href="/" class="nav-btn active">Home</a>
+      <a href="/careers/" class="nav-btn">Careers</a>
+      <a href="/about/" class="nav-btn">About Us</a>
+      <a href="/commercial/" class="nav-btn">Commercial</a>
+      <a href="/residential/" class="nav-btn">Residential</a>
+      <a href="/quote/" class="nav-btn">Get a Quote</a>
+      <a href="/gallery/" class="nav-btn">Photo Gallery</a>
+      <a href="/more/" class="nav-btn">More</a>
+    </div>
   </div>
 
-  <!-- DESKTOP NAV -->
-  <div class="nav-container">
-    <a href="/" class="nav-btn active">Home</a>
-    <a href="/careers/" class="nav-btn">Careers</a>
-    <a href="/about/" class="nav-btn">About Us</a>
-    <a href="/commercial/" class="nav-btn">Commercial</a>
-    <a href="/residential/" class="nav-btn">Residential</a>
-    <a href="/quote/" class="nav-btn">Get a Quote</a>
-    <a href="/gallery/" class="nav-btn">Photo Gallery</a>
-    <a href="/more/" class="nav-btn">More</a>
-  </div>
-
-  <!-- MOBILE NAV -->
+  <!-- Mobile Nav -->
   <div class="mobile-menu">
     <a href="/">Home</a>
     <a href="/careers/">Careers</a>
@@ -146,12 +147,11 @@
     <a href="/more/">More</a>
   </div>
 
-  <!-- PURPLE STRIPE -->
+  <!-- Bottom Stripe -->
   <div style="height: 6px; background-color: #2b0e48;"></div>
 
   <main>
     {{ content | safe }}
   </main>
-
 </body>
 </html>
