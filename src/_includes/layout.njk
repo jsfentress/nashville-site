@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<script>
+  function toggleMenu() {
+    document.body.classList.toggle('mobile-open');
+  }
+
+  // Close mobile menu when switching to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      document.body.classList.remove('mobile-open');
+    }
+  });
+</script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
@@ -48,26 +62,27 @@
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      gap: 0.75em;
+      gap: 0.25em;
     }
 
     .nav-btn {
-      background: linear-gradient(to bottom, #f6f6f6, #eaeaea);
-      color: #2b0e48;
-      font-weight: 700;
-      padding: 0.5em 1.5em;
-      text-decoration: none;
-      font-size: 0.95rem;
-      border-radius: 2em;
-      border: none;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-      transition: all 0.2s ease;
+    background: linear-gradient(to bottom, #f6f6f6, #eaeaea);
+    color: #2b0e48;
+    font-weight: 700;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    font-size: 0.95rem;
+    border-radius: .2em;
+    border: none;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    transition: all 0.25s ease;
     }
 
     .nav-btn:hover {
-      background-color: #f1f1f1;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    background: linear-gradient(to bottom, #666, #444);
+    color: #bdfcd4;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.2), 0 3px 6px rgba(0,0,0,0.2);
+    transform: translateY(-1px);
     }
 
     .nav-btn.active {
@@ -81,12 +96,12 @@
       flex-direction: column;
       align-items: center;
       background-color: #3fc3f3;
-      padding: 1em;
+      padding: .5em;
     }
 
     .mobile-menu a {
       color: white;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       margin: 0.5em 0;
       text-decoration: none;
     }
