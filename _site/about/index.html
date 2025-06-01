@@ -17,7 +17,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }}</title>
+  <title>About</title>
   <style>
     body {
       margin: 0;
@@ -153,35 +153,35 @@
 
     <!-- Desktop Nav Buttons -->
 <div class="nav-left">
-  <a href="/" class="nav-btn {% if page.url == '/' %}active{% endif %}">Home</a>
-  <a href="/careers/" class="nav-btn {% if page.url == '/careers/' %}active{% endif %}">Careers</a>
-  <a href="/about/" class="nav-btn {% if page.url == '/about/' %}active{% endif %}">About Us</a>
-  <a href="/commercial/" class="nav-btn {% if page.url == '/commercial/' %}active{% endif %}">Commercial</a>
-  <a href="/residential/" class="nav-btn {% if page.url == '/residential/' %}active{% endif %}">Residential</a>
-  <a href="/quote/" class="nav-btn {% if page.url == '/quote/' %}active{% endif %}">Get a Quote</a>
-  <a href="/gallery/" class="nav-btn {% if page.url == '/gallery/' %}active{% endif %}">Photo Gallery</a>
-  <a href="/more/" class="nav-btn {% if page.url == '/more/' %}active{% endif %}">More</a>
+  <a href="/" class="nav-btn ">Home</a>
+  <a href="/careers/" class="nav-btn ">Careers</a>
+  <a href="/about/" class="nav-btn active">About Us</a>
+  <a href="/commercial/" class="nav-btn ">Commercial</a>
+  <a href="/residential/" class="nav-btn ">Residential</a>
+  <a href="/quote/" class="nav-btn ">Get a Quote</a>
+  <a href="/gallery/" class="nav-btn ">Photo Gallery</a>
+  <a href="/more/" class="nav-btn ">More</a>
 </div>
 
   </div>
 
   <!-- Mobile Nav -->
 <div class="mobile-menu">
-  <a href="/" class="{% if page.url == '/' %}active{% endif %}">Home</a>
-  <a href="/careers/" class="{% if page.url == '/careers/' %}active{% endif %}">Careers</a>
-  <a href="/about/" class="{% if page.url == '/about/' %}active{% endif %}">About Us</a>
-  <a href="/commercial/" class="{% if page.url == '/commercial/' %}active{% endif %}">Commercial</a>
-  <a href="/residential/" class="{% if page.url == '/residential/' %}active{% endif %}">Residential</a>
-  <a href="/quote/" class="{% if page.url == '/quote/' %}active{% endif %}">Get a Quote</a>
-  <a href="/gallery/" class="{% if page.url == '/gallery/' %}active{% endif %}">Photo Gallery</a>
-  <a href="/more/" class="{% if page.url == '/more/' %}active{% endif %}">More</a>
+  <a href="/" class="">Home</a>
+  <a href="/careers/" class="">Careers</a>
+  <a href="/about/" class="active">About Us</a>
+  <a href="/commercial/" class="">Commercial</a>
+  <a href="/residential/" class="">Residential</a>
+  <a href="/quote/" class="">Get a Quote</a>
+  <a href="/gallery/" class="">Photo Gallery</a>
+  <a href="/more/" class="">More</a>
 </div>
 
   <!-- Bottom Stripe -->
   <div style="height: 6px; background-color: #2b0e48;"></div>
 
   <main>
-    {{ content | safe }}
+    <!-- Empty for now -->
   </main>
 </body>
 </html>
