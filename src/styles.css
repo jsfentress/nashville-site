@@ -25,3 +25,69 @@
   .content {
     text-align: center;
   }
+  .quote-split {
+  padding: 3em 1em;
+  background: #f9f9f9;
+}
+
+.quote-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.quote-form, .quote-message {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+.quote-form form {
+  background: #333;
+  padding: 2em;
+  border-radius: 8px;
+  color: white;
+}
+
+.quote-form h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.quote-form input {
+  width: 100%;
+  padding: 0.75em;
+  margin-bottom: 1em;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.quote-form button {
+  background: limegreen;
+  color: white;
+  padding: 0.75em 1.5em;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.quote-intro {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 1em;
+}
+
+.quote-headline {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.quote-message ul {
+  padding-left: 1.2em;
+  line-height: 1.6;
+}
