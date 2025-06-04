@@ -1,80 +1,57 @@
-/* ---------------- HERO SECTION ---------------- */
-.hero {
-    background-image: url('/Images/home-hero.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 6rem 1rem;
-    text-align: center;
-  }
-  
-  .hero h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: white;
-  }
-  
-  .cta {
-    display: inline-block;
-    margin-top: 1.5em;
-    background: limegreen;
-    color: white;
-    padding: 0.75em 1.5em;
-    font-weight: bold;
-    border-radius: 30px;
-    text-decoration: none;
-  }
-  
-  /* ---------------- CONTENT SECTION ---------------- */
-  .content {
-    text-align: center;
-  }
-  
-  /* ---------------- QUOTE FORM SPLIT SECTION ---------------- */
-  .quote-split {
-    padding: 3em 1em;
-    background: #f9f9f9;
-  }
-  
-  .quote-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 2em;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 2em 1em;
-    border-style: solid;
-  }
-  
-  .quote-message {
-    text-align: left;
-  }
-  
-  .quote-form {
-    text-align: left;
-  }
-  
-  .quote-message,
-  .quote-form {
-    width: 48%;
-    max-width: 48%;
-    min-width: 0;
-  }
-  
-  /* ---------------- MOBILE RESPONSIVE ---------------- */
-  @media (max-width: 900px) {
-    .quote-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .quote-message,
-    .quote-form {
-      width: 100%;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-  }
-  
+.homepage-hero {
+  background: url('/Images/water-bg.jpg') no-repeat center top;
+  background-size: cover;
+  text-align: center;
+  position: relative;
+  color: #004b78;
+}
+
+.hero-logo {
+  width: 220px;
+  max-width: 90vw;
+  margin: 0 auto 1rem;
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0077b6;
+  text-shadow: 0 1px 1px white;
+  margin: 1rem 0;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: #00bcd4;
+}
+
+.hero-phone {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 1.25rem 0;
+}
+
+.hero-phone a {
+  color: #0077b6;
+  text-decoration: none;
+}
+
+.hero-phone a:hover {
+  text-decoration: underline;
+}
+
+.badge-box {
+  margin-top: 1.5rem;
+}
+
+.badge {
+  max-width: 200px;
+  height: auto;
+}
+
+.homebox {
+ display: flex;
+ flex-direction: row;
+ align-items: left;
+justify-content: left;
+}
