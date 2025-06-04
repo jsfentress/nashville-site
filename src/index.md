@@ -20,7 +20,20 @@ hero_cta_link: "/quote/"
 
 <section class="quote-split">
   <div class="quote-container">
+    
+    <!-- 🧠 Text Block Comes First (LEFT) -->
+    <div class="quote-message">
+      <h2 class="quote-headline">Book Pressure Washing <br> in Nashville<br> Without the Hassle</h2>
+      <ul>
+        <p>✓ Affordable residential + commercial service</p>
+        <p>✓ Licensed, local, and experienced</p>
+        <p>✓ Flexible scheduling + same-week availability</p>
+      </ul>
+    </div>
+
+    <!-- ✍️ Form Block Second (RIGHT) -->
     <div class="quote-form">
+    <p class="quote-intro">Fill out this form below for a fast & free quote!</p>
       <form action="https://formspree.io/f/mnqkwkyq" method="POST">
         <h2>Get a Free Estimate</h2>
         
@@ -43,15 +56,6 @@ hero_cta_link: "/quote/"
       </form>
     </div>
 
-    <div class="quote-message">
-      <p class="quote-intro">Fill out this form below for a fast & free quote!</p>
-      <h2 class="quote-headline">Book Pressure Washing in Nashville<br> Without the Hassle</h2>
-      <ul>
-        <li>✓ Affordable residential + commercial service</li>
-        <li>✓ Licensed, local, and experienced</li>
-        <li>✓ Flexible scheduling + same-week availability</li>
-      </ul>
-    </div>
   </div>
 </section>
 
