@@ -9,7 +9,6 @@
 .hero-logo {
   width: 220px;
   max-width: 90vw;
-  margin: 0 auto 1rem;
 }
 
 .hero-title {
@@ -52,6 +51,6 @@
 .homebox {
  display: flex;
  flex-direction: row;
- align-items: left;
-justify-content: left;
+ align-items: center;
+justify-content: center;
 }
