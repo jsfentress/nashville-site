@@ -58,24 +58,23 @@
     max-width: 48%;
     min-width: 0;
   }
-  
   @media (max-width: 768px) {
     .quote-container {
       flex-direction: column;
-      align-items: center;
+      align-items: center; /* centers the child blocks horizontally */
     }
-
-      
-        .quote-form {
-          width: 100%;
-          max-width: 500px;  /* 👈 limits width */
-          margin: 0 auto;    /* 👈 ensures it's centered */
-        }
-      
-        .quote-form form {
-          text-align: left; /* 👈 keeps form fields left-aligned */
-        }
-      }
+  
+    .quote-form {
+      width: 100%;
+      max-width: 500px;  /* 👈 limits width */
+      margin: 0 auto;    /* 👈 ensures it's centered */
+    }
+  
+    .quote-form form {
+      text-align: left; /* 👈 keeps form fields left-aligned */
+    }
+  }
+  
   
     .quote-message,
     .quote-form {
