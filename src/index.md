@@ -6,6 +6,9 @@ hero_heading: "#1 Pressure Washing Service in Nashville"
 hero_cta_text: "Get a Fast Quote"
 hero_cta_link: "/quote/"
 ---
+
+<link rel="stylesheet" href="homestyles.css" />
+
 <section class="hero">
   <h1>#1 Pressure Washing Service in Nashville</h1>
   <a class="cta" href="/quote/">Get a Fast Quote</a>
