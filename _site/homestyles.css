@@ -2,8 +2,8 @@
 .hero-banner {
   background: url('/Images/swoosh.png') no-repeat center;
   background-size: contain;
-  padding: 1rem 1rem;
   text-align: center;
+
 }
 
 .hero-container {
@@ -16,7 +16,7 @@
   font-weight: bold;
   color: #005fa3;
   text-shadow: 0 2px 3px rgba(0,0,0,0.15);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   background-color: white;
 }
 
@@ -81,7 +81,4 @@
     font-size: 1.4rem;
   }
 
-  .bbb-badge {
-    margin: 0 auto;
-  }
 }
