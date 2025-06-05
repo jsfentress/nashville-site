@@ -38,9 +38,6 @@
   height: auto;
 }
 
-.hero-right {
-  text-align: left;
-}
 
 .hero-call {
   font-size: 1.75rem;
@@ -53,6 +50,7 @@
 .hero-call a {
   color: #0073e6;
   text-decoration: none;
+  font-size: 25px;
 }
 
 .hero-call a:hover {
@@ -130,4 +128,8 @@
   margin: 0.5rem 0 0;
   font-size: 0.95rem;
   color: #333;
+}
+.services-header {
+  text-align: center;
+  text-decoration: underline;
 }

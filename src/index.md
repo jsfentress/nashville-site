@@ -17,8 +17,8 @@ title: Home
       </div>
 
       <div class="hero-right">
-        <h2 class="hero-call">Call: <a href="tel:6155551234">615-555-1234</a></h2>
-        <h2 class="hero-call"> <a href="/quote/">Get a Quote</a></h2>
+        <h2 class="hero-call">Call <a href="tel:6155551234">615-555-1234</a></h2>
+        <h2 class="hero-call">Or <a href="/quote/">Get a Quote</a></h2>
       </div>
     </div>
   </div>
@@ -27,6 +27,8 @@ title: Home
 
 
 <div class="services-list">
+
+<h2 class="services-header">Exterior Cleaning Services</h2>
 
   <div class="service-item">
     <div class="service-text">
