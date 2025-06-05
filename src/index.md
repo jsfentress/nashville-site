@@ -23,3 +23,54 @@ title: Home
     </div>
   </div>
 </section>
+
+
+
+<section class="services-section">
+  <div class="container">
+    <h2 class="services-heading">Exterior Cleaning Services</h2>
+    <div class="services-grid">
+
+      <div class="service-item">
+        <span class="check">&#10004;</span>
+        <div>
+          <h3>Driveway & Sidewalk Cleaning</h3>
+          <p>Concrete driveways, walkways, and curbs blasted clean of dirt, moss, and mildew.</p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <span class="check">&#10004;</span>
+        <div>
+          <h3>Patio & Porch Washdowns</h3>
+          <p>Clearing away grime, leaves, and built-up gunk from patios, front steps, and entryways.</p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <span class="check">&#10004;</span>
+        <div>
+          <h3>Fence Washing</h3>
+          <p>Pressure washing wood and vinyl fences to remove surface-level buildup and discoloration.</p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <span class="check">&#10004;</span>
+        <div>
+          <h3>Trash Can & Bin Pads</h3>
+          <p>Quick, sanitary blast to clean up stains and smells around garbage can storage areas.</p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <span class="check">&#10004;</span>
+        <div>
+          <h3>Garage Doors & Sheds</h3>
+          <p>Great for washing painted or metal surfaces like garage doors, sheds, and outdoor furniture.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
