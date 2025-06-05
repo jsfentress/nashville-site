@@ -18,7 +18,7 @@ title: Home
 
       <div class="hero-right">
         <h2 class="hero-call">Call: <a href="tel:6155551234">615-555-1234</a></h2>
-        <img class="bbb-badge" src="/Images/bbb-badge.png" alt="BBB Accredited Business">
+        <h2 class="hero-call"> <a href="/quote/">Get a Quote</a></h2>
       </div>
     </div>
   </div>
