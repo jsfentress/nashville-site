@@ -86,49 +86,48 @@
 
 
 
-
 .services-section {
-  background: #fff;
+  background: white;
   padding: 3em 1em;
+  text-align: left;
 }
 
-.services-heading {
+.services-section h2 {
   text-align: center;
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #0a3871;
-  margin-bottom: 2em;
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.05);
+  font-size: 2rem;
+  color: #002b5b;
+  margin-bottom: 2rem;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2em;
-  max-width: 1000px;
+.services-list {
+  max-width: 600px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .service-item {
   display: flex;
   align-items: flex-start;
-  gap: 0.75em;
+  gap: 1rem;
 }
 
-.service-item .check {
-  font-size: 1.25rem;
-  color: #0077cc;
-  margin-top: 0.25em;
+.service-item::before {
+  content: "✔️";
+  color: #002b5b;
+  font-size: 1.2rem;
+  margin-top: 0.25rem;
 }
 
-.service-item h3 {
+.service-text h3 {
   font-size: 1.1rem;
-  margin: 0 0 0.25em 0;
+  margin: 0;
   font-weight: 700;
 }
 
-.service-item p {
+.service-text p {
+  margin: 0.5rem 0 0;
   font-size: 0.95rem;
-  margin: 0;
-  line-height: 1.5;
+  color: #333;
 }
