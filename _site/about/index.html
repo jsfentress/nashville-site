@@ -139,6 +139,72 @@
         color: black;
       }
     }
+
+    .site-footer {
+  background-color: #182958;
+  color: white;
+  padding: 2em 1em;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: column;
+  justify-content: space-evenly;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+}
+
+.footer-column h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5em;
+  color: #ffffff;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.5em;
+}
+
+.footer-column a {
+  color: #bdfcd4;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2em;
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1em;
+  color: #ccc;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-column {
+    margin-bottom: 1.5em;
+  }
+}
+
   </style>
 
   <script>
@@ -207,5 +273,36 @@
   <main>
     <!-- Empty for now -->
   </main>
+
+
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h4>Crown Wash</h4>
+      <p>Rule Your Curb Appeal</p>
+      <p>Serving Nashville and Middle Tennessee</p>
+    </div>
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/quote/">Get a Quote</a></li>
+        <li><a href="/commercial/">Commercial</a></li>
+        <li><a href="/residential/">Residential</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <p><a href="tel:6155551234">615-555-1234</a></p>
+      <p><a href="/quote/">Request Service</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Crown Wash. All rights reserved.</p>
+  </div>
+</footer>
+
+
 </body>
 </html>

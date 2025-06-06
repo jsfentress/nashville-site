@@ -10,7 +10,7 @@ title: Quote
     <h2>Call <a href="tel:6155551234">615-555-1234</a> or<br>Fill Out Our Quote Form</h2>
   </div>
 
-  <form name="quote" method="POST" class="quote-form-wrapper" data-netlify="true">
+  <form name="quote" method="POST" class="quote-form-wrapper" data-netlify="true" data-netlify-recaptcha="true">
     <div class="row">
       <input type="hidden" name="quote" value="contact"/>
       <input type="text" name="name" placeholder="Name" required />
