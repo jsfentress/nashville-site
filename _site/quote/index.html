@@ -6,12 +6,17 @@
   <title>Quote</title>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+  const toggles = document.querySelectorAll('.mobile-dropdown-toggle');
 
-  dropdownToggles.forEach(toggle => {
+  toggles.forEach(toggle => {
     toggle.addEventListener('click', () => {
       const parent = toggle.closest('.mobile-dropdown');
       parent.classList.toggle('open');
+
+      // Flip arrow symbol
+      toggle.innerHTML = toggle.innerHTML.includes('▾')
+        ? toggle.innerHTML.replace('▾', '▴')
+        : toggle.innerHTML.replace('▴', '▾');
     });
   });
 });
@@ -158,45 +163,35 @@ document.addEventListener('DOMContentLoaded', () => {
   width: 80%;
   max-width: 300px;
   margin: 0.5em auto;
-}
-
-.mobile-dropdown-toggle {
-  width: 100%;
-  display: block;
-  padding: 0.5em;
-  text-align: left;
-  font-size: 1.4rem;
-  background-color: transparent;
-  border: none;
+  font-size: 1.3rem;
   color: black;
-  border-radius: 5px;
-  transition: background 0.3s ease;
 }
 
-.mobile-dropdown-toggle {
-  line-height: 1.4;
-}
-
-.mobile-dropdown-toggle:hover,
-.mobile-dropdown.active .mobile-dropdown-toggle {
-  background-color: #6677a5;
-  color: #ffffff;
+.mobile-dropdown-label {
   font-weight: bold;
-  border: 2px solid white;
+  background-color:#5F5F5F;
+  color: white;
+  padding: 0.5em 1rem;
+  border-radius: 5px 5px 0 0;
 }
-
 
 .mobile-dropdown-menu {
-  display: none;
+  display: flex;
   flex-direction: column;
-  padding-left: 1rem;
+  padding: 0.5em 1rem;
+  background-color: #f5f5f5;
+  border-radius: 0 0 5px 5px;
 }
 
 .mobile-dropdown-menu a {
   padding: 0.4rem 0;
   font-size: 1.1rem;
-  color: #333;
+  color: #2b0e48;
   text-decoration: none;
+}
+
+.mobile-dropdown-menu a:hover {
+  text-decoration: underline;
 }
 
 .mobile-dropdown.open .mobile-dropdown-menu {
@@ -405,21 +400,20 @@ document.addEventListener('DOMContentLoaded', () => {
  
     <a href="/quote/" class="active">Quotes</a>
 
-<div class="mobile-dropdown " style="width: 80%; max-width: 300px; margin: 0.5em auto;">
-  <button class="mobile-dropdown-toggle">Commercial ▾</button>
+<div class="mobile-dropdown">
+  <div class="mobile-dropdown-label">Commercial</div>
   <div class="mobile-dropdown-menu">
     <a href="/commercial/boiler/">Boiler Cleaning</a>
     <a href="/commercial/commercial/">Full Commercial Services</a>
   </div>
 </div>
 
-<div class="mobile-dropdown " style="width: 80%; max-width: 300px; margin: 0.5em auto;">
-  <button class="mobile-dropdown-toggle">Residential ▾</button>
+<div class="mobile-dropdown">
+  <div class="mobile-dropdown-label">Residential</div>
   <div class="mobile-dropdown-menu">
-    <a href="/commercial/boiler/">Boiler Cleaning</a>
-    <a href="/commercial/commercial/">Full Commercial Services</a>
+    <a href="/residential/roof/">Roof Washing</a>
+    <a href="/residential/deck/">Deck Restoration</a>
   </div>
-</div>
 
     <a href="/About/" class="">About</a>
   </div>
