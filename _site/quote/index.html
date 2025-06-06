@@ -4,7 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quote</title>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
 
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const parent = toggle.closest('.mobile-dropdown');
+      parent.classList.toggle('open');
+    });
+  });
+});
+</script>
   <style>
     body {
       margin: 0;
@@ -143,6 +154,49 @@
       }
     }
 
+.mobile-dropdown {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.mobile-dropdown-toggle {
+  width: 100%;
+  padding:.5m;
+  text-align: left;
+  font-size: 1.4rem;
+  color: black;
+  font-weight: normal;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.mobile-dropdown-toggle:hover,
+.mobile-dropdown.active .mobile-dropdown-toggle {
+  background-color: #6677a5;
+  color: #ffffff;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+
+.mobile-dropdown-menu {
+  display: none;
+  flex-direction: column;
+  padding-left: 1rem;
+}
+
+.mobile-dropdown-menu a {
+  padding: 0.4rem 0;
+  font-size: 1.1rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.mobile-dropdown.open .mobile-dropdown-menu {
+  display: flex;
+}
 
 /* Nav button container */
 .dropdown {
@@ -343,10 +397,17 @@
   <div class="mobile-menu">
     <a href="/" class="">Home</a>
     <a href="/quote/" class="active">Quotes</a>
-    <a href="/commercial/" class="">Commercial</a>
+<div class="mobile-dropdown " style="width: 80%; max-width: 300px; margin: 0.5em auto;">
+  <button class="mobile-dropdown-toggle">Commercial ▾</button>
+  <div class="mobile-dropdown-menu">
+    <a href="/commercial/boiler/">Boiler Cleaning</a>
+    <a href="/commercial/commercial/">Full Commercial Services</a>
+  </div>
+</div>
     <a href="/residential/" class="">Residential</a>
     <a href="/locations/" class="">Locations</a>
     <a href="/About/" class="">About</a>
+  </div>
   </div>
 
   <!-- Bottom Stripe -->

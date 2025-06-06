@@ -116,11 +116,7 @@ title: boiler
 
   <label>What would you like washed?</label>
 <div class="checkbox-grid">
-  <label><input type="checkbox" name="service" value="Residential">Residential</label>
-  <label><input type="checkbox" name="service" value="Commercial"> Commercial</label>
-  <label><input type="checkbox" name="service" value="Construction">Construction</label>
-  <label><input type="checkbox" name="service" value="Marine/RV">Marine/RV</label>
-    <label><input type="checkbox" name="service" value="Fleet">Fleet</label>
+  <input type="text" name="zip" required>
 </div>
 
 
