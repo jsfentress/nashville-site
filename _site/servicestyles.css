@@ -133,3 +133,9 @@ input[type="checkbox"]:focus {
 }
 
 
+input,
+select,
+textarea,
+button {
+  font-size: 16px;
+}
