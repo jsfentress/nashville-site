@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>boiler</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    .call-top-bar {
+      position: sticky;
+      top: 0;
+      background-color: white;
+      padding: 0.75em;
+      text-align: center;
+      font-size: 1.45rem;
+      font-weight: bold, underline;
+      z-index: 9999;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .call-top-bar a {
+      color: #2b0e48;
+      text-decoration: none;
+    }
+
+    .call-top-bar a:hover {
+      text-decoration: underline;
+    }
+
+    .top-bar {
+      background-color: white;
+      padding: 0.75em 1em;
+    }
+
+.top-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 950px; /* Match form width */
+  margin: 0 auto;
+  padding: 0.1em 1em;
+}
+
+    .logo-wrapper img {
+      max-height: 90px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .hamburger {
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      display: none;
+    }
+
+    .nav-left {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: .25em;
+      padding: 0em 0;
+      background-color:white;
+    }
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  background: none;
+  color: #2b0e48;
+  border-radius: 0.2em;
+  border: none;
+  box-shadow: 0 3px 6px rgba(28, 23, 81, 0.1);
+  transition: all 0.25s ease;
+}
+
+    .nav-btn:hover {
+      background: linear-gradient(to bottom, #666, #444);
+      color:rgb(255, 255, 255);
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.2), 0 3px 6px rgba(0,0,0,0.2);
+      transform: translateY(-1px);
+    }
+
+    .nav-btn.active {
+      background: linear-gradient(to bottom, #666, #444);
+      color:rgb(255, 255, 255);
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      align-items: left;
+      background-color:rgb(255, 255, 255);
+      padding: 0.5em;
+    }
+
+    .mobile-menu a {
+      display: block;
+      width: 80%;
+      max-width: 300px;
+      margin: 0.5em auto;
+      text-align: left;
+      font-size: 1.4rem;
+      text-decoration: none;
+      padding: 0.5em;
+      color: black;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .mobile-menu a.active {
+      background-color: #6677A5;
+      color: #ffffff;
+      font-weight: bold;
+      border-radius: 5px;
+      border: 2px solid white;
+    }
+
+    .mobile-open .mobile-menu {
+      display: flex;
+    }
+
+    @media (max-width: 800px) {
+      .nav-left {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+        color: black;
+      }
+    }
+
+
+/* Nav button container */
+.dropdown {
+  position: relative;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  min-width: 220px;
+  padding: 0.5rem 0;
+  margin: 0;
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+/* Each item in dropdown */
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  margin-left: 10px;
+  color: #2b0e48;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f3f3f3;
+}
+
+/* Keep dropdown open when hovering either parent OR child */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Prevent flicker: make sure the <a> inside .nav-btn doesn't interfere */
+.nav-btn a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #2b0e48;
+}
+
+/* Maintain nav-btn style consistency */
+.nav-btn a:hover,
+.dropdown:hover > a {
+  background: linear-gradient(to bottom, #666, #444);
+  color: white;
+  border-radius: 4px;
+}
+
+/* Fix spacing issues */
+.dropdown-menu li a {
+  padding: 0.5rem 1rem;
+}
+
+
+    .site-footer {
+  background-color: #182958;
+  color: white;
+  padding: 2em 1em;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  text align: center;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+}
+
+.footer-column h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5em;
+  color: #ffffff;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.5em;
+}
+
+.footer-column a {
+  color: #bdfcd4;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2em;
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1em;
+  color: #ccc;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-column {
+    margin-bottom: 1.5em;
+  }
+}
+
+  </style>
+
+  <script>
+    function toggleMenu() {
+      document.body.classList.toggle('mobile-open');
+    }
+
+    // Close mobile menu on resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        document.body.classList.remove('mobile-open');
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <!-- Sticky call-to-action -->
+  <div class="call-top-bar">
+    <a href="tel:6155551234"><strong>Tap to Call:</strong> 615-555-1234</a>
+  </div>
+
+  <!-- Logo and Hamburger Nav -->
+<div class="top-bar">
+  <div class="top-bar-content">
+    
+    <div class="logo-wrapper">
+      <a href="/">
+        <img src="/Images/logo.png" alt="Your Site Logo" class="site-logo" />
+      </a>
+    </div>
+
+    <!-- Flex wrapper for nav + hamburger -->
+    <div class="nav-wrapper">
+      <div class="nav-left">
+        <a href="/"class="nav-btn ">Home</a>
+        <a href="/quote/" class="nav-btn ">Quotes</a>
+<div class="nav-btn dropdown">
+  <a href="/commercial/">Commercial ▾</a>
+  <ul class="dropdown-menu">
+    <li><a href="/commercial/boiler/">Boiler Cleaning</a></li>
+    <li><a href="/commercial/commercial/">Full Commercial Services</a></li>
+  </ul>
+</div>
+<div class="nav-btn dropdown">
+  <a href="/residential/">Residential ▾</a>
+  <ul class="dropdown-menu">
+    <li><a href="/commercial/boiler/">Boiler Cleaning</a></li>
+    <li><a href="/commercial/commercial/">Full Commercial Services</a></li>
+  </ul>
+</div>
+
+        <a href="/locations/" class="nav-btn ">Locations</a>
+        <a href="/about/" class="nav-btn ">About</a>
+
+      </div>
+
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Mobile Nav -->
+  <div class="mobile-menu">
+    <a href="/" class="">Home</a>
+    <a href="/quote/" class="">Quotes</a>
+    <a href="/commercial/" class="">Commercial</a>
+    <a href="/residential/" class="">Residential</a>
+    <a href="/locations/" class="">Locations</a>
+    <a href="/About/" class="">About</a>
+  </div>
+
+  <!-- Bottom Stripe -->
+  <div style="height: 6px; background-color: #6677a5;"></div>
+
+  <!-- Page Content -->
+  <main>
+    <link rel="stylesheet" href="/servicestyles.css" />
+<div class="section-banner">
+  <h1>Specialized Pressure Washing for Boilers & Industrial Systems</h1>
+</div>
+<section class="page-section two-column">
+  <div class="main-content">
+    <h2>Specialized Pressure Washing for Boilers & Industrial Systems</h2>
+    <p>
+      JetSurface provides industrial-grade boiler cleaning for mechanical rooms, plants, and facilities.
+    </p>
+    <ul>
+      <li>Degreasing & scale removal</li>
+      <li>Commercial exhaust stacks</li>
+      <li>Pre-inspection washdown</li>
+    </ul>
+     <h2>Specialized Pressure Washing for Boilers & Industrial Systems</h2>
+    <p>
+      JetSurface provides industrial-grade boiler cleaning for mechanical rooms, plants, and facilities.
+    </p>
+    <ul>
+      <li>Degreasing & scale removal</li>
+      <li>Commercial exhaust stacks</li>
+      <li>Pre-inspection washdown</li>
+    </ul>
+     <h2>Specialized Pressure Washing for Boilers & Industrial Systems</h2>
+    <p>
+      JetSurface provides industrial-grade boiler cleaning for mechanical rooms, plants, and facilities.
+    </p>
+    <ul>
+      <li>Degreasing & scale removal</li>
+      <li>Commercial exhaust stacks</li>
+      <li>Pre-inspection washdown</li>
+    </ul>
+     <h2>Specialized Pressure Washing for Boilers & Industrial Systems</h2>
+    <p>
+      JetSurface provides industrial-grade boiler cleaning for mechanical rooms, plants, and facilities.
+    </p>
+    <ul>
+      <li>Degreasing & scale removal</li>
+      <li>Commercial exhaust stacks</li>
+      <li>Pre-inspection washdown</li>
+    </ul>
+     <h2>Specialized Pressure Washing for Boilers & Industrial Systems</h2>
+    <p>
+      JetSurface provides industrial-grade boiler cleaning for mechanical rooms, plants, and facilities.
+    </p>
+    <ul>
+      <li>Degreasing & scale removal</li>
+      <li>Commercial exhaust stacks</li>
+      <li>Pre-inspection washdown</li>
+    </ul>
+     <h2>Specialized Pressure Washing for Boilers & Industrial Systems</h2>
+    <p>
+      JetSurface provides industrial-grade boiler cleaning for mechanical rooms, plants, and facilities.
+    </p>
+    <ul>
+      <li>Degreasing & scale removal</li>
+      <li>Commercial exhaust stacks</li>
+      <li>Pre-inspection washdown</li>
+    </ul>
+     <h2>Specialized Pressure Washing for Boilers & Industrial Systems</h2>
+    <p>
+      JetSurface provides industrial-grade boiler cleaning for mechanical rooms, plants, and facilities.
+    </p>
+    <ul>
+      <li>Degreasing & scale removal</li>
+      <li>Commercial exhaust stacks</li>
+      <li>Pre-inspection washdown</li>
+    </ul>
+     <h2>Specialized Pressure Washing for Boilers & Industrial Systems</h2>
+    <p>
+      JetSurface provides industrial-grade boiler cleaning for mechanical rooms, plants, and facilities.
+    </p>
+    <ul>
+      <li>Degreasing & scale removal</li>
+      <li>Commercial exhaust stacks</li>
+      <li>Pre-inspection washdown</li>
+    </ul>
+  </div>
+  <aside class="quote-sidebar">
+    <h3>Request a Quote</h3>
+    <form name="boiler-quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thankyou/">
+  <input type="hidden" name="form-name" value="boiler-quote">
+  <p class="hidden">
+    <label>Don’t fill this out: <input name="bot-field" /></label>
+  </p>
+<p><label>Address</label>
+<input type="text" name="address" required></p>
+<p><label>Street Address</label>
+<input type="text" name="address2"></p>
+<p><label>City</label>
+<input type="text" name="city" required></p>
+<p><label>State / Province / Region</label>
+<input type="text" name="state"></p>
+<p><label>ZIP / Postal Code</label>
+<input type="text" name="zip" required></p>
+<p><label>What would you like washed?</label></p>
+<div class="checkbox-grid">
+  <label><input type="checkbox" name="service" value="Residential">Residential</label>
+  <label><input type="checkbox" name="service" value="Commercial"> Commercial</label>
+  <label><input type="checkbox" name="service" value="Construction">Construction</label>
+  <label><input type="checkbox" name="service" value="Marine/RV">Marine/RV</label>
+    <label><input type="checkbox" name="service" value="Fleet">Fleet</label>
+</div>
+<p><button type="submit">Next</button></p>
+</form>
+  </aside>
+</section>
+  </main>
+
+
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h4>Crown Wash</h4>
+      <p>Rule Your Curb Appeal</p>
+      <p>Serving Nashville and Middle Tennessee</p>
+    </div>
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/quote/">Get a Quote</a></li>
+        <li><a href="/commercial/">Commercial</a></li>
+        <li><a href="/residential/">Residential</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Contact</h4>
+      <p><a href="tel:6155551234">615-555-1234</a></p>
+      <p><a href="/quote/">Request Service</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Crown Wash. All rights reserved.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>

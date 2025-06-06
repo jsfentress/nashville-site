@@ -70,18 +70,21 @@
       background-color:white;
     }
 
-    .nav-btn {
-      background: none;
-      color: #2b0e48;
-      font-weight: 700;
-      padding: 0.5em 1em;
-      text-decoration: none;
-      font-size: 0.95rem;
-      border-radius: 0.2em;
-      border: none;
-      box-shadow: 0 3px 6px rgba(28, 23, 81, 0.1);
-      transition: all 0.25s ease;
-    }
+.nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  background: none;
+  color: #2b0e48;
+  border-radius: 0.2em;
+  border: none;
+  box-shadow: 0 3px 6px rgba(28, 23, 81, 0.1);
+  transition: all 0.25s ease;
+}
 
     .nav-btn:hover {
       background: linear-gradient(to bottom, #666, #444);
@@ -140,6 +143,73 @@
       }
     }
 
+
+/* Nav button container */
+.dropdown {
+  position: relative;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  min-width: 220px;
+  padding: 0.5rem 0;
+  margin: 0;
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+/* Each item in dropdown */
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  margin-left: 10px;
+  color: #2b0e48;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f3f3f3;
+}
+
+/* Keep dropdown open when hovering either parent OR child */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Prevent flicker: make sure the <a> inside .nav-btn doesn't interfere */
+.nav-btn a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #2b0e48;
+}
+
+/* Maintain nav-btn style consistency */
+.nav-btn a:hover,
+.dropdown:hover > a {
+  background: linear-gradient(to bottom, #666, #444);
+  color: white;
+  border-radius: 4px;
+}
+
+/* Fix spacing issues */
+.dropdown-menu li a {
+  padding: 0.5rem 1rem;
+}
+
+
     .site-footer {
   background-color: #182958;
   color: white;
@@ -151,8 +221,8 @@
   max-width: 700px;
   margin: 0 auto;
   display: flex;
-  flex-wrap: column;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  text align: center;
 }
 
 .footer-column {
@@ -242,8 +312,21 @@
       <div class="nav-left">
         <a href="/"class="nav-btn ">Home</a>
         <a href="/quote/" class="nav-btn ">Quotes</a>
-        <a href="/commercial/" class="nav-btn ">Commercial</a>
-        <a href="/residential/" class="nav-btn active">Residential</a>
+<div class="nav-btn dropdown">
+  <a href="/commercial/">Commercial ▾</a>
+  <ul class="dropdown-menu">
+    <li><a href="/commercial/boiler/">Boiler Cleaning</a></li>
+    <li><a href="/commercial/commercial/">Full Commercial Services</a></li>
+  </ul>
+</div>
+<div class="nav-btn dropdown">
+  <a href="/residential/">Residential ▾</a>
+  <ul class="dropdown-menu">
+    <li><a href="/commercial/boiler/">Boiler Cleaning</a></li>
+    <li><a href="/commercial/commercial/">Full Commercial Services</a></li>
+  </ul>
+</div>
+
         <a href="/locations/" class="nav-btn ">Locations</a>
         <a href="/about/" class="nav-btn ">About</a>
 

@@ -1,0 +1,135 @@
+
+.section-banner {
+  background: #001a44;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 5%;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.main-content {
+
+}
+
+.quote-sidebar {
+  background-color: #001a44;
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  font-size: 1rem;
+  margin-left: 10px;
+  margin-right: 25px;
+}
+.quote-sidebar h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.quote-sidebar label {
+  font-weight: bold;
+  display: block;
+  margin-top: 1rem;
+}
+.quote-sidebar input,
+.quote-sidebar select {
+  width: 95%;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 2px;
+}
+.quote-sidebar button {
+  background: #00bfff;
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+}
+.quote-sidebar form > *:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  gap: 0.25rem .25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.checkbox-grid label {
+  display: inline-flex;
+  align-items: left;
+  gap: 0.1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: white;
+  white-space: nowrap;
+}
+
+.checkbox-grid input[type="checkbox"] {
+  transform: scale(1.1);
+  accent-color: #00bfff;
+}
+
+
+.quote-sidebar button {
+  background: #00bfff;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  padding: 0.75rem 2rem;
+  width: 100%;
+  margin-top: 1.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.quote-sidebar button:hover {
+  background: #0094cc;
+}
+input[type="checkbox"]:focus {
+  outline: 2px solid #00bfff;
+  outline-offset: 2px;
+}
+
+.hidden {
+  display: none;
+}
+@media (max-width: 800px) {
+  .two-column {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 3rem;
+  }
+
+  .main-content,
+  .quote-sidebar {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+  }
+
+  .quote-sidebar {
+    margin-top: 2rem;
+  }
+}
+
+
